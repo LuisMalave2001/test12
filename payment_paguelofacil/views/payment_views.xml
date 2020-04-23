@@ -11,6 +11,8 @@
                 <attribute name="attrs">{'invisible': ['|', ('token_implemented', '=', False), ('provider', '=', 'paguelofacil')]}</attribute>
             </field>
             <xpath expr='//group[@name="acquirer"]' position='inside'>
+                <field name="state" invisible="1"/>
+                <field name="provider" invisible="1"/>
                 <group attrs="{'invisible': [('provider', '!=', 'paguelofacil')]}">
                     <field name="paguelofacil_cclw" attrs="{'required':[ ('provider', '=', 'paguelofacil'), ('state', '!=', 'disabled')]}" password="True"/>
                     <field name="paguelofacil_api_key" attrs="{'required':[ ('provider', '=', 'paguelofacil'), ('state', '!=', 'disabled')]}" password="True"/>
